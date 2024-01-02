@@ -1,0 +1,44 @@
+<div class="container bg-dark">
+    <div class="h1 bold text-secondary my-3 text-center"> Welcome To Code Night</div>
+    <div class="d-flex align-items-center justify-content-center" style="height: 100vh;">
+      <div class="border door-box" [class.door-box-opened]="isDoorOpen"></div>
+      <button class="btn btn-success ms-5" (click)="rotateDoor()">{{buttonText}}</button>
+    </div>
+    <div class="d-flex align-items-center justify-content-center p-3">
+        <img src="../../assets/alghorithm_pic/door_alghoritm.jpg" alt="">
+    </div>
+
+</div>
+
+<div class="container bg-secondary">
+    <div class="d-flex align-items-center justify-content-center flex-column  " style="height: 100vh;">
+        <div class="h1 bold text-black mb-5 text-center "> GSAP ANIMATION  FW</div>
+        <div id="doors">
+            <div class="doorWrapper">
+              <div class="door d1">
+                <div class="doorFace front">
+                  <div class="enter">Enter</div>
+                  <div class="exit">Exit</div>
+                </div>
+                <div class="doorFace back">
+                  <div class="enter">Enter</div>
+                  <div class="exit">Exit</div>
+                </div>
+              </div>
+            </div>
+            <div class="doorWrapper">
+              <div class="door d2">
+                <div class="doorFace front">
+                  <div class="enter">Enter</div>
+                  <div class="exit">Exit</div>
+                </div>
+                <div class="doorFace back">
+                  <div class="enter">Enter</div>
+                  <div class="exit">Exit</div>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+
+</div>	

@@ -1,0 +1,68 @@
+.door-box{
+    width: 300px; 
+    height: 600px;
+    background-color: #ccc; 
+    background-image: url("https://www.itakeyou.co.uk/wp-content/uploads/2023/08/stitch-blue-wallpaper.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.door-box-opened {
+    transform: rotateY(-270deg); 
+    animation: rotateDoor 6s linear infinite;
+
+}
+@keyframes rotateDoor {
+    0% {
+      transform: rotateY(0deg);
+    }
+    100% {
+      transform: rotateY(-360deg);
+    }
+  }
+
+#doors {
+    position: relative;
+    width: 400px;
+    height: 600px;
+    
+    top: 30px;
+    background-color: #1680c2;
+  }
+  
+  .doorWrapper {
+    width: 400px;   
+    height: 600px;
+    position: absolute;
+    float: left;
+    margin: 0px;
+    padding: 0px;
+    cursor: pointer;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  .doorFace {
+    position: absolute;
+    width: 400px;
+    height: 600px;
+    overflow: hidden;
+    text-align: center;
+  }
+  
+  .doorFace div {
+    width: 50%;
+    height: 100%;
+    padding-top: 15%;
+    float: left;
+    font-size: 40px;
+  }
+  
+  .enter {
+    background-color: #ffffff;
+    color: #b9d1df;
+  }
+
+  .exit {
+    background-color: #b9d1df;
+    color: #ffffff;
+  }

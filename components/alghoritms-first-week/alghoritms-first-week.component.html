@@ -1,0 +1,172 @@
+<div class="container mt-3">
+
+    <div class="row">
+      <div class="d-flex justify-content-center mb-3"><h2>Fahrenheit To Celsius</h2></div>
+      <div class="col-6">
+       <div class="d-flex justify-content-center ">
+          <label for="fahrenheitInput" class="form-label">Enter Fahrenheit:</label>
+          <input id="fahrenheitInput" type="number" class="form-control" [(ngModel)]="fahrenheitValue">
+        </div> 
+        <p class="mt-2">{{ calculateCelsius() | number:'1.1-1' }}°C</p>
+      </div>
+      <div class="col-6">
+        <img src="../assets/alghorithm_pic/calculatecelciustofahrenheit.jpg" class="img-fluid" alt="Your Image">
+      </div>
+    </div>
+  
+    <div class="row mt-3">
+      <div class="d-flex justify-content-center mb-3"><h2>Grade System</h2></div>
+      <div class="col-6">
+        <div class="d-flex justify-content-center ">
+          <label for="exam1" class="form-label">Exam1:</label>
+          <input id="exam1" type="number" class="form-control" [(ngModel)]="exam1">
+        </div>
+        <div class="d-flex justify-content-center ">
+          <label for="exam2" class="form-label">Exam2:</label>
+          <input id="exam2" type="number" class="form-control" [(ngModel)]="exam2">
+        </div>
+        <div class="d-flex justify-content-center ">
+          <label for="exam3" class="form-label">Exam3:</label>
+          <input id="exam3" type="number" class="form-control" [(ngModel)]="exam3">
+        </div>
+        <div class="d-flex justify-content-center ">
+          <label for="exam4" class="form-label">Exam4:</label>
+          <input id="exam4" type="number" class="form-control" [(ngModel)]="exam4">
+        </div>
+        <button class="btn btn-primary mt-3" (click)="calculateExam()">calculateExam</button>
+        <p class="mt-2">{{ result }}</p>
+      </div>
+      <div class="col-6">
+        <img src="../assets/alghorithm_pic/exampassalghorithm.jpg" class="img-fluid" alt="Your Image">
+      </div>
+    </div>
+  
+    <div class="row mt-3">
+      <div class="d-flex justify-content-center mb-3"><h2>Button Click while count < 20</h2></div>
+      <div class="col-6">
+        <button class="btn btn-success" (click)="increaseNumber()" [ngClass]="{'disabled': buttonCount >= 20}" [disabled]="buttonCount >= 20">Count++</button>
+        <p class="mt-2">{{ buttonCount }}</p>
+      </div>
+      <div class="col-6">
+        <img src="../assets/alghorithm_pic/print1-20.jpg" class="img-fluid" alt="Your Image">
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="d-flex justify-content-center mb-3"><h2>Reverse Input</h2></div>
+      <div class="col-6">
+        <div class="d-flex justify-content-center ">
+          <label for="reverseInput" class="form-label">Enter Input:</label>
+          <input id="reverseInput" type="text" class="form-control" [(ngModel)]="reverseInput">
+          <button class="btn btn-success" (click)="reverseString()">Reverse String</button>
+        </div> 
+        <p class="mt-2">{{ reversedString }}</p>
+      </div>
+      <div class="col-6">
+        <img src="../assets/alghorithm_pic/reverseString.jpg" class="img-fluid" alt=""> 
+      </div>
+    </div>
+    
+    <div class="row mt-3">
+      <div class="d-flex justify-content-center mb-3"><h2>Min and Max sum</h2></div>
+      <div class="col-6">
+        <div class="d-flex justify-content-center ">
+          <label for="" class="form-label">Enter Input:</label>
+          <input id="" type="number" class="form-control" [(ngModel)]="inputNumber">
+          <button class="btn btn-success" (click)="addNumber()">  add number</button>
+          <button class="btn btn-success" (click)="calculateMaxMin()">Calculate min and max </button>
+        </div> 
+        <div *ngIf="min === 0 && max === 0">
+          <p>Sayı giriniz.</p>
+        </div>
+        <div *ngIf="min !== 0 || max !== 0">
+          <p>Minimum değer: {{ min }}</p>
+          <p>Maksimum değer: {{ max }}</p>
+        </div>
+        <!-- <p class="mt-2">{{  }}</p> -->
+      </div>
+      <div class="col-6">
+        <img src="../assets/alghorithm_pic/minandmax_calculator.jpg" class="img-fluid" alt=""> 
+      </div>
+    </div>
+    <!--üçgen hesaplama dik üçgen mi ?-->
+    <div class="row mt-3">
+      <div class="d-flex justify-content-center mb-3"><h2>Special triangle</h2></div>
+      <div class="col-6">
+        <div class="d-flex justify-content-center ">  
+          <label for="" class="form-label">Square1:</label>
+          <input id="" type="number" class="form-control" [(ngModel)]="square1">
+          <label for="" class="form-label">Square2:</label>
+          <input id="" type="number" class="form-control" [(ngModel)]="square2">
+          <label for="" class="form-label">Square3:</label>
+          <input id="" type="number" class="form-control" [(ngModel)]="square3">
+          
+        </div> 
+        <div *ngIf="!isSpecialTriangle()">
+          <p> Özel üçgen değil</p>
+        </div>
+        <div *ngIf="isSpecialTriangle()">
+          <p>Girdiğiniz değerler özel üçgen oluşturur</p>
+        </div>
+        <!-- <p class="mt-2">{{  }}</p> -->
+      </div>
+      <div class="col-6">
+        <img src="../assets/alghorithm_pic/specialTriangle.png" class="img-fluid" alt=""> 
+      </div>
+    </div>
+  
+    <div class="row mt-3">
+      <div class="d-flex justify-content-center mb-3"><h2>Factorial Calculator</h2></div>
+      <div class="col-6">
+        <div>
+          <label for="factorialInput">Bir sayı giriniz:</label>
+          <input type="number" id="factorialInput"  class="form-control" [(ngModel)]="factorialInput" />
+          <button  class="btn btn-primary my-2" (click)="calculateFactorial()">Faktöriyel Hesapla</button>
+        </div>
+        <div *ngIf="factorialResult !== null">
+          <p>Faktöriyel: {{ factorialResult }}</p>
+        </div>
+      </div>
+      <div class="col-6">
+        <img src="" class="img-fluid" alt=""> 
+      </div>
+    </div>
+  
+  
+    <div class="row mt-3">
+      <div class="d-flex justify-content-center mb-3"><h2>Basamak Ekleme</h2></div>
+      <div class="col-6">
+          <div>
+            <label for="">Bir sayı giriniz:</label>
+            <input  class="form-control" type="number"  id="" [(ngModel)]="numberq8" />
+            <button (click)="calculateDigit()" class="btn btn-primary my-2" >Basamak Hesapla</button>
+          </div>
+          <div *ngIf="numberofDigits !== null">
+            <p>Sayı {{ numberofDigits }} basamaklıdır.</p>
+          </div>
+      </div>
+      <div class="col-6">
+        <img src="" class="img-fluid" alt=""> 
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="d-flex justify-content-center mb-3"><h2>Basamak Ekleme</h2></div>
+      <div class="col-6">
+        <div>
+          <label for="year">Yılı giriniz:</label>
+          <input class="form-control my-2" type="number" id="year" [(ngModel)]="year" />
+          <button class="btn btn-primary my-2" (click)="checkYear()"> Yıl Kontrolü</button>
+        </div>
+        <div *ngIf="isYear !== null">
+          <p>{{ isYear ? 'Artık yıldır' : 'Artık yıl değildir' }}</p>
+        </div>
+      </div>
+      <div class="col-6">
+        <img src="" class="img-fluid" alt=""> 
+      </div>
+    </div>
+    
+  
+  
+  
+    <!-- container-end -->
+  </div>

@@ -1,0 +1,9 @@
+.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+  // todo create class and give classname for flowchart pictures  &&   search how to improve flowchart image quality 
+  img{
+    width: 100%;
+    height: 300px;
+  }
